@@ -1,0 +1,196 @@
+{
+  "team_names": [
+    {
+      "abbr": "ARI",
+      "name": "Arizona Cardinals",
+      "reportUrl": "https://www.azcardinals.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "ATL",
+      "name": "Atlanta Falcons",
+      "reportUrl": "https://www.atlantafalcons.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "BAL",
+      "name": "Baltimore Ravens",
+      "reportUrl": "https://www.baltimoreravens.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "BUF",
+      "name": "Buffalo Bills",
+      "reportUrl": "https://www.buffalobills.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "CAR",
+      "name": "Carolina Panthers",
+      "reportUrl": "https://www.panthers.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "CIN",
+      "name": "Cincinnati Bengals",
+      "reportUrl": "https://www.bengals.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "CHI",
+      "name": "Chicago Bears",
+      "reportUrl": "https://www.chicagobears.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "CLE",
+      "name": "Cleveland Browns",
+      "reportUrl": "https://www.clevelandbrowns.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "DAL",
+      "name": "Dallas Cowboys",
+      "reportUrl": "https://www.dallascowboys.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "DEN",
+      "name": "Denver Broncos",
+      "reportUrl": "https://www.denverbroncos.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "DET",
+      "name": "Detroit Lions",
+      "reportUrl": "https://detroitlions.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "GNB",
+      "name": "Green Bay Packers",
+      "reportUrl": "https://www.packers.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "HOU",
+      "name": "Houston Texans",
+      "reportUrl": "https://www.houstontexans.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "IND",
+      "name": "Indianapolis Colts",
+      "reportUrl": "https://www.colts.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "LVR",
+      "name": "Las Vegas Raiders",
+      "reportUrl": "https://www.raiders.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "LAC",
+      "name": "Los Angeles Chargers",
+      "reportUrl": "https://www.chargers.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "LAR",
+      "name": "Los Angeles Rams",
+      "reportUrl": "https://www.therams.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "JAX",
+      "name": "Jacksonville Jaguars",
+      "reportUrl": "https://www.jaguars.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "KAN",
+      "name": "Kansas City Chiefs",
+      "reportUrl": "https://www.chiefs.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "MIN",
+      "name": "Minnesota Vikings",
+      "reportUrl": "https://www.vikings.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "MIA",
+      "name": "Miami Dolphins",
+      "reportUrl": "https://www.miamidolphins.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "NWE",
+      "name": "New England Patriots",
+      "reportUrl": "https://www.patriots.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "NOR",
+      "name": "New Orleans Saints",
+      "reportUrl": "https://www.neworleanssaints.com/team/injury-report/",
+      "dome": "True"
+    },
+    {
+      "abbr": "NYG",
+      "name": "New York Giants",
+      "reportUrl": "https://www.giants.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "NYJ",
+      "name": "New York Jets",
+      "reportUrl": "https://www.newyorkjets.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "PHI",
+      "name": "Philadelphia Eagles",
+      "reportUrl": "https://www.philadelphiaeagles.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "PIT",
+      "name": "Pittsburgh Steelers",
+      "reportUrl": "https://www.steelers.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "SFO",
+      "name": "San Francisco 49ers",
+      "reportUrl": "https://www.49ers.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "SEA",
+      "name": "Seattle Seahawks",
+      "reportUrl": "https://www.seahawks.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "TAM",
+      "name": "Tampa Bay Buccaneers",
+      "reportUrl": "https://www.buccaneers.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "TEN",
+      "name": "Tennessee Titans",
+      "reportUrl": "https://www.tennesseetitans.com/team/injury-report/",
+      "dome": "False"
+    },
+    {
+      "abbr": "WAS",
+      "name": "Washington Commanders",
+      "reportUrl": "https://www.commanders.com/team/injury-report/",
+      "dome": "False"
+    }
+  ]
+}
