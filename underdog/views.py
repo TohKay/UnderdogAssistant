@@ -20,7 +20,9 @@ def home(request):
 
     })
     opponent_full = ""
-        
+    next_opponent = ""
+    team_abbr = ""
+
     if 'player_name' in request.GET:
         options = webdriver.ChromeOptions()
         options.add_argument('--headless=new')
@@ -40,8 +42,13 @@ def home(request):
         page = requests.get(current_page)
         soup = BeautifulSoup(page.text, 'html.parser')
 
+        # Scrapes team name
+        team = soup.find(name='div', id="meta")
+        team_name = team.find('a').get_text()
+
         # Scrape player position
         position = soup.find("td", {'data-stat': "pos"}).get_text()
+
         # Grab next opponent
         opponent = soup.find(name='div', id="tfooter_last5")
         next_opponent = opponent.find('a').get_text()
@@ -119,6 +126,9 @@ def home(request):
             if next_opponent == (i['abbr']):
                 opponent_full = i['name']
 
+        for i in team_data:
+            if team_name == i['name']:
+                team_abbr = i['abbr']
         # Find next_opponents injury report
         for i in team_data:
 
@@ -157,17 +167,21 @@ def home(request):
 
                     # Adjusts index to start at 1 instead of 0
                     df2.index = np.arange(1, len(df2) + 1)
-                    df2 = df2.style.set_table_attributes('class="table table-sm table-hover text-center w-50 h-25"')
+                    df2 = df2.style.set_table_attributes('class="table table-sm table-bordered border-dark table-hover text-center w-50 h-25"')
                     driver.quit()
         
     df = df.fillna('')
-    df = df.style.set_table_attributes('class="table table-hover text-center w-100 h-25"')
+    df = df.reindex(index=df.index[::-1])
+    df.columns.name = "Week #"
+    df = df.style.set_table_attributes('class="table table-bordered border-dark table-hover text-center w-100 h-25"')
 
     mydict = {
         "df": df.to_html(),
         "df2": df2.to_html(),
         "player": player_name,
-        "opponent": opponent_full
+        "opponent": opponent_full,
+        "injury_color": next_opponent,
+        "team_abbr": team_abbr
     }
 
     return render(request, 'underdog/home.html', context=mydict)

@@ -1,0 +1,556 @@
+body {
+    background-color: lightgray;
+}
+tr, td {
+    font-weight: bold;
+}
+* {
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+#main {
+    text-align: center;
+    padding-top: 50px;
+    background-color: #DDD0C8;
+    width: 100%;
+}
+form {
+    margin-bottom: 1%;
+}
+#table1 {
+    position: relative;
+    bottom: 0;
+}
+input[type='text'] {
+    width: 30%;
+    padding: 10px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+input[type='submit'] {
+    width: 10%;
+    padding: 10px;
+    border: 2px solid black;
+    background: black;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+th {
+    cursor: pointer;
+}
+
+#ARI tr td:nth-child(even) {
+    background-color: #97233F;
+    opacity: 0.7;
+}
+#ARI tr td:nth-child(even) { 
+    color: #000000;
+    opacity: 1;
+}
+#ARI tr td:nth-child(odd) {
+    background-color: #FFB612;
+    opacity: 0.7;
+}
+#ARI tr td:nth-child(odd) { 
+    color: #000000;
+    opacity: 1;
+}
+#ATL tr td:nth-child(even) {
+    background-color: #A71930;
+    opacity: 0.7;
+}
+#ATL tr td:nth-child(even) { 
+    color: #A5ACAF;
+    opacity: 1;
+}
+#ATL tr td:nth-child(odd) {
+    background-color: #000000;
+    opacity: 0.7;
+}
+#ATL tr td:nth-child(odd) { 
+    color: #A5ACAF;
+    opacity: 1;
+}
+#BAL tr td:nth-child(even) {
+    background-color: #241773;
+    opacity: 0.7;
+}
+#BAL tr td:nth-child(even) { 
+    color: #000000;
+    opacity: 1;
+}
+#BAL tr td:nth-child(odd) {
+    background-color: #000000;
+    opacity: 0.7;
+}
+#BAL tr td:nth-child(odd) { 
+    color: #241773;
+    opacity: 1;
+}
+#BUF tr td:nth-child(even) {
+    background-color: #00338D;
+    opacity: 0.7;
+}
+#BUF tr td:nth-child(even) { 
+    color: #C60C30;
+    opacity: 1;
+}
+#BUF tr td:nth-child(odd) {
+    background-color: #C60C30;
+    opacity: 0.7;
+}
+#BUF tr td:nth-child(odd) { 
+    color: #00338D;
+    opacity: 1;
+}
+#CAR tr td:nth-child(even) {
+    background-color: #0085CA;
+    opacity: 0.7;
+}
+#CAR tr td:nth-child(even) { 
+    color: #BFC0BF;
+    opacity: 1;
+}
+#CAR tr td:nth-child(odd) {
+    background-color: #101820;
+    opacity: 0.7;
+}
+#CAR tr td:nth-child(odd) { 
+    color: #BFC0BF;
+    opacity: 1;
+}
+#CIN tr td:nth-child(even) {
+    background-color: #000000;
+    opacity: 0.7;
+}
+#CIN tr td:nth-child(even) { 
+    color: #FB4F14;
+    opacity: 1;
+}
+#CIN tr td:nth-child(odd) {
+    background-color: #FB4F14;
+    opacity: 0.7;
+}
+#CIN tr td:nth-child(odd) { 
+    color: #000000;
+    opacity: 1;
+}
+#CHI tr td:nth-child(even) {
+    background-color: #0B162A;
+    opacity: 0.7;
+}
+#CHI tr td:nth-child(even) { 
+    color: #C83803;
+    opacity: 1;
+}
+#CHI tr td:nth-child(odd) {
+    background-color: #C83803;
+    opacity: 0.7;
+}
+#CHI tr td:nth-child(odd) { 
+    color: #0B162A;
+    opacity: 1;
+}
+#CLE tr td:nth-child(even) {
+    background-color: #311D00;
+    opacity: 0.7;
+}
+#CLE tr td:nth-child(even) { 
+    color: #FFFFFF;
+    opacity: 1;
+}
+#CLE tr td:nth-child(odd) {
+    background-color: #FF3C00;
+    opacity: 0.7;
+}
+#CLE tr td:nth-child(odd) { 
+    color: #FFFFFF;
+    opacity: 1;
+}
+#DAL tr td:nth-child(even) {
+    background-color: #003594;
+    opacity: 0.7;
+}
+#DAL tr td:nth-child(even) { 
+    color: #869397;
+    opacity: 1;
+}
+#DAL tr td:nth-child(odd) {
+    background-color: #869397;
+    opacity: 0.7;
+}
+#DAL tr td:nth-child(odd) { 
+    color: #003594;
+    opacity: 1;
+}
+#DEN tr td:nth-child(even) {
+    background-color: #FB4F14;
+    opacity: 0.7;
+}
+#DEN tr td:nth-child(even) { 
+    color: #002244;
+    opacity: 1;
+}
+#DEN tr td:nth-child(odd) {
+    background-color: #002244;
+    opacity: 0.7;
+}
+#DEN tr td:nth-child(odd) { 
+    color: #FB4F14;
+    opacity: 1;
+}
+#DET tr td:nth-child(even) {
+    background-color: #0076B6;
+    opacity: 0.7;
+}
+#DET tr td:nth-child(even) { 
+    color: #FFFFFF;
+    opacity: 1;
+}
+#DET tr td:nth-child(odd) {
+    background-color: #B0B7BC;
+    opacity: 0.7;
+}
+#DET tr td:nth-child(odd) { 
+    color: #FFFFFF;
+    opacity: 1;
+}
+#GNB tr td:nth-child(even) {
+    background-color: #203731;
+    opacity: 0.7;
+}
+#GNB tr td:nth-child(even) { 
+    color: #FFB612;
+    opacity: 1;
+}
+#GNB tr td:nth-child(odd) {
+    background-color: #FFB612;
+    opacity: 0.7;
+}
+#GNB tr td:nth-child(odd) { 
+    color: #203731;
+    opacity: 1;
+}
+#HOU tr td:nth-child(even) {
+    background-color: #03202F;
+    opacity: 0.7;
+}
+#HOU tr td:nth-child(even) { 
+    color: #A71930;
+    opacity: 1;
+}
+#HOU tr td:nth-child(odd) {
+    background-color: #A71930;
+    opacity: 0.7;
+}
+#HOU tr td:nth-child(odd) { 
+    color: #03202F;
+    opacity: 1;
+}
+#IND tr td:nth-child(even) {
+    background-color: #002C5F;
+    opacity: 0.7;
+}
+#IND tr td:nth-child(even) { 
+    color: #A2AAAD;
+    opacity: 1;
+}
+#IND tr td:nth-child(odd) {
+    background-color: #A2AAAD;
+    opacity: 0.7;
+}
+#IND tr td:nth-child(odd) { 
+    color: #002C5F;
+    opacity: 1;
+}
+#LVR tr td:nth-child(even) {
+    background-color: #000000;
+    opacity: 0.7;
+}
+#LVR tr td:nth-child(even) { 
+    color: #A5ACAF;
+    opacity: 1;
+}
+#LVR tr td:nth-child(odd) {
+    background-color: #A5ACAF;
+    opacity: 0.7;
+}
+#LVR tr td:nth-child(odd) { 
+    color: #000000;
+    opacity: 1;
+}
+#LAC tr td:nth-child(even) {
+    background-color: #0080C6;
+    opacity: 0.7;
+}
+#LAC tr td:nth-child(even) { 
+    color: #FFC20E;
+    opacity: 1;
+}
+#LAC tr td:nth-child(odd) {
+    background-color: #FFC20E;
+    opacity: 0.7;
+}
+#LAC tr td:nth-child(odd) { 
+    color: #0080C6;
+    opacity: 1;
+}
+#LAR tr td:nth-child(even) {
+    background-color: #9F792C;
+    opacity: 0.7;
+}
+#LAR tr td:nth-child(even) { 
+    color: #003594;
+    opacity: 1;
+}
+#LAR tr td:nth-child(odd) {
+    background-color: #003594;
+    opacity: 0.7;
+}
+#LAR tr td:nth-child(odd) { 
+    color: #9F792C;
+    opacity: 1;
+}
+#JAX tr td:nth-child(even) {
+    background-color: #006778;
+    opacity: 0.7;
+}
+#JAX tr td:nth-child(even) { 
+    color: #101820;
+    opacity: 1;
+}
+#JAX tr td:nth-child(odd) {
+    background-color: #101820;
+    opacity: 0.7;
+}
+#JAX tr td:nth-child(odd) { 
+    color: #9F792C;
+    opacity: 1;
+}
+#KAN tr td:nth-child(even) {
+    background-color: #E31837;
+    opacity: 0.7;
+}
+#KAN tr td:nth-child(even) { 
+    color: #FFB81C;
+    opacity: 1;
+}
+#KAN tr td:nth-child(odd) {
+    background-color: #FFB81C;
+    opacity: 0.7;
+}
+#KAN tr td:nth-child(odd) { 
+    color: #E31837;
+    opacity: 1;
+}
+#MIN tr td:nth-child(even) {
+    background-color: #4F2683;
+    opacity: 0.7;
+}
+#MIN tr td:nth-child(even) { 
+    color: #FFC62F;
+    opacity: 1;
+}
+#MIN tr td:nth-child(odd) {
+    background-color: #FFC62F;
+    opacity: 0.7;
+}
+#MIN tr td:nth-child(odd) { 
+    color: #4F2683;
+    opacity: 1;
+}
+#MIA tr td:nth-child(even) {
+    background-color: #008E97;
+    opacity: 0.7;
+}
+#MIA tr td:nth-child(even) { 
+    color: #005778;
+    opacity: 1;
+}
+#MIA tr td:nth-child(odd) {
+    background-color: #FC4C02;
+    opacity: 0.7;
+}
+#MIA tr td:nth-child(odd) { 
+    color: #005778;
+    opacity: 1;
+}
+#NWE tr td:nth-child(even) {
+    background-color: #002244;
+    opacity: 0.7;
+}
+#NWE tr td:nth-child(even) { 
+    color: #B0B7BC;
+    opacity: 1;
+}
+#NWE tr td:nth-child(odd) {
+    background-color: #C60C30;
+    opacity: 0.7;
+}
+#NWE tr td:nth-child(odd) { 
+    color: #B0B7BC;
+    opacity: 1;
+}
+#NOR tr td:nth-child(even) {
+    background-color: #D3BC8D;
+    opacity: 0.7;
+}
+#NOR tr td:nth-child(even) { 
+    color: #101820;
+    opacity: 1;
+}
+#NOR tr td:nth-child(odd) {
+    background-color: #101820;
+    opacity: 0.7;
+}
+#NOR tr td:nth-child(odd) { 
+    color: #D3BC8D;
+    opacity: 1;
+}
+#NYG tr td:nth-child(even) {
+    background-color: #0B2265;
+    opacity: 0.7;
+}
+#NYG tr td:nth-child(even) { 
+    color: #A71930;
+    opacity: 1;
+}
+#NYG tr td:nth-child(odd) {
+    background-color: #A71930;
+    opacity: 0.7;
+}
+#NYG tr td:nth-child(odd) { 
+    color: #0B2265;
+    opacity: 1;
+}
+#NYJ tr td:nth-child(even) {
+    background-color: #125740;
+    opacity: 0.7;
+}
+#NYJ tr td:nth-child(even) { 
+    color: #000000;
+    opacity: 1;
+}
+#NYJ tr td:nth-child(odd) {
+    background-color: #000000;
+    opacity: 0.7;
+}
+#NYJ tr td:nth-child(odd) { 
+    color: #125740;
+    opacity: 1;
+}
+#PHI tr td:nth-child(even) {
+    background-color: #004C54;
+    opacity: 0.7;
+}
+#PHI tr td:nth-child(even) { 
+    color: #A5ACAF;
+    opacity: 1;
+}
+#PHI tr td:nth-child(odd) {
+    background-color: #A5ACAF;
+    opacity: 0.7;
+}
+#PHI tr td:nth-child(odd) { 
+    color: #004C54;
+    opacity: 1;
+}
+#PIT tr td:nth-child(even) {
+    background-color: #101820;
+    opacity: 0.7;
+}
+#PIT tr td:nth-child(even) { 
+    color: #FFB612;
+    opacity: 1;
+}
+#PIT tr td:nth-child(odd) {
+    background-color: #FFB612;
+    opacity: 0.7;
+}
+#PIT tr td:nth-child(odd) { 
+    color: #101820;
+    opacity: 1;
+}
+#SFO tr td:nth-child(even) {
+    background-color: #B3995D;
+    opacity: 0.7;
+}
+#SFO tr td:nth-child(even) { 
+    color: #AA0000;
+    opacity: 1;
+}
+#SFO tr td:nth-child(odd) {
+    background-color: #AA0000;
+    opacity: 0.7;
+}
+#SFO tr td:nth-child(odd) { 
+    color: #B3995D;
+    opacity: 1;
+}
+#SEA tr td:nth-child(even) {
+    background-color: #002244;
+    opacity: 0.7;
+}
+#SEA tr td:nth-child(even) { 
+    color: #69BE28;
+    opacity: 1;
+}
+#SEA tr td:nth-child(odd) {
+    background-color: #69BE28;
+    opacity: 0.7;
+}
+#SEA tr td:nth-child(odd) { 
+    color: #002244;
+    opacity: 1;
+}
+#TAM tr td:nth-child(even) {
+    background-color: #D50A0A;
+    opacity: 0.7;
+}
+#TAM tr td:nth-child(even) { 
+    color: #34302B;
+    opacity: 1;
+}
+#TAM tr td:nth-child(odd) {
+    background-color: #34302B;
+    opacity: 0.7;
+}
+#TAM tr td:nth-child(odd) { 
+    color: #D50A0A;
+    opacity: 1;
+}
+#TEN tr td:nth-child(even) {
+    background-color: #0C2340;
+    opacity: 0.7;
+}
+#TEN tr td:nth-child(even) { 
+    color: #4B92DB;
+    opacity: 1;
+}
+#TEN tr td:nth-child(odd) {
+    background-color: #4B92DB;
+    opacity: 0.7;
+}
+#TEN tr td:nth-child(odd) { 
+    color: #0C2340;
+    opacity: 1;
+}
+#WAS tr td:nth-child(even) {
+    background-color: #5A1414;
+    opacity: 0.7;
+}
+#WAS tr td:nth-child(even) { 
+    color: #FFB612;
+    opacity: 1;
+}
+#WAS tr td:nth-child(odd) {
+    background-color: #FFB612;
+    opacity: 0.7;
+}
+#WAS tr td:nth-child(odd) { 
+    color: #5A1414;
+    opacity: 1;
+}
