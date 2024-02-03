@@ -12,7 +12,7 @@ import json
 # Create your views here.
 
 def home(request):
-    player_name = request.GET.get('player_name')
+    player = request.GET.get('player_name')
     df = pd.DataFrame({
 
     })
@@ -22,8 +22,10 @@ def home(request):
     opponent_full = ""
     next_opponent = ""
     team_abbr = ""
-
+    injury = ""
+    player_name = ""
     if 'player_name' in request.GET:
+        player_name = player
         options = webdriver.ChromeOptions()
         options.add_argument('--headless=new')
         options.add_argument('--disable-dev-shm-usage')
@@ -119,7 +121,7 @@ def home(request):
         df.index = np.arange(1, len(df) + 1)
 
         # test json data
-        f = open('C:/Users/sapic/Desktop/underdog_assistant/underdog/team_names.json')
+        f = open('./underdog/team_names.json')
         data = json.load(f)
         team_data = data['team_names']
         for i in team_data:
@@ -164,16 +166,26 @@ def home(request):
                             individual_row_data2.append(data2.text.strip())
                         length2 = len(df2)
                         df2.loc[length2] = individual_row_data2
-
+                    injury = " Injury Report"
                     # Adjusts index to start at 1 instead of 0
                     df2.index = np.arange(1, len(df2) + 1)
-                    df2 = df2.style.set_table_attributes('class="table table-sm table-bordered border-dark table-hover text-center w-50 h-25"')
                     driver.quit()
-        
+    
     df = df.fillna('')
     df = df.reindex(index=df.index[::-1])
     df.columns.name = "Week #"
-    df = df.style.set_table_attributes('class="table table-bordered border-dark table-hover text-center w-100 h-25"')
+    df = df.style.set_table_styles(
+        [{"selector": "thead tr th", "props": "background-color: #A9A9A9; color: black;"}]
+    ).set_table_attributes(
+        'class="table table-bordered border-dark table-hover text-center w-100 h-25"'
+    )
+    df2 = df2.style.hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "th", "props": "background-color: #A9A9A9; color: black;"}]
+    ).set_table_attributes(
+        'class="table table-sm table-bordered border-dark table-hover text-center w-50 h-25"'
+    )
 
     mydict = {
         "df": df.to_html(),
@@ -181,7 +193,8 @@ def home(request):
         "player": player_name,
         "opponent": opponent_full,
         "injury_color": next_opponent,
-        "team_abbr": team_abbr
+        "team_abbr": team_abbr,
+        "injury": injury
     }
 
     return render(request, 'underdog/home.html', context=mydict)
