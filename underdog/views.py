@@ -29,6 +29,7 @@ def home(request):
         options = webdriver.ChromeOptions()
         options.add_argument('--headless=new')
         options.add_argument('--disable-dev-shm-usage')
+        options.add_argument("--no-sandbox")
         image_preferences = {"profile.managed_default_content_settings.images": 2}
         options.add_experimental_option("prefs", image_preferences)
         driver = webdriver.Chrome(options=options)
