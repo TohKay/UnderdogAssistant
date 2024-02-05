@@ -176,14 +176,14 @@ def home(request):
     df = df.reindex(index=df.index[::-1])
     df.columns.name = "Week #"
     df = df.style.set_table_styles(
-        [{"selector": "thead tr th", "props": "background-color: #A9A9A9; color: black;"}]
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
     ).set_table_attributes(
         'class="table table-bordered border-dark table-hover text-center w-100 h-25"'
     )
     df2 = df2.style.hide(
         axis="index"
     ).set_table_styles(
-        [{"selector": "th", "props": "background-color: #A9A9A9; color: black;"}]
+        [{"selector": "th", "props": "background-color: #3D3D3D; color: white;"}]
     ).set_table_attributes(
         'class="table table-sm table-bordered border-dark table-hover text-center w-50 h-25"'
     )
