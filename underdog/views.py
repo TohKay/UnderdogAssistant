@@ -179,7 +179,7 @@ def home(request):
     df = df.style.set_table_styles(
         [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
     ).set_table_attributes(
-        'class="table table-bordered border-dark table-hover text-center w-100 h-25"'
+        'class="table table-bordered border-dark table-hover text-center w-100 h-25""'
     )
     df2 = df2.style.hide(
         axis="index"
