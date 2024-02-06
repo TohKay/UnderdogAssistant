@@ -28,6 +28,7 @@ def home(request):
         player_name = player
         options = webdriver.ChromeOptions()
         options.add_argument('--headless=new')
+        options.add_argument('--disable-gpu')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument("--no-sandbox")
         image_preferences = {"profile.managed_default_content_settings.images": 2}

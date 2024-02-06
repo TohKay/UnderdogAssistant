@@ -8,15 +8,15 @@
 body {
     background-color: lightgray;
     background-size: cover;
-    background: url("football_on_field2.jpg") no-repeat center center fixed;
+    background: url("football_on_field.jpg") no-repeat center center fixed;
     max-width: 100%;
     max-height: 100%;
 }
 
 #main {
     text-align: center;
-    margin-top: 2%;
-    border-radius: 5px 5px 5px 5px;
+    margin-top: 6%;
+    border-radius: 5px;
     h1 {
         color: white;
     }
@@ -29,7 +29,7 @@ body {
 #player_input {
     background-color: #3d3d3d;
     border: 1px solid black;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     width: 40%;
 }
 
@@ -40,7 +40,7 @@ form {
 input[type='text'] {
     padding: 10px;
     border: 1px solid black;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     margin-bottom: 2%;
     min-width: 200px;
     width: 100%;
@@ -56,33 +56,30 @@ input[type='submit'] {
     text-transform: uppercase;
     width: auto;
     margin-top: 1%;
-    margin-bottom: 10px;
+    margin-bottom: 3%;
 }
 
 /* Table css */
 
 #tables h1 {
-    background-color: #3d3d3d;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     color: white;
     width: fit-content;
     font-weight: bold;
     -webkit-text-stroke: 1px black;
-    margin-top: 2%;
 }
 
 #tables h2 {
-    background-color: #3d3d3d;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     color: white;
     width: fit-content;
     font-weight: bold;
     -webkit-text-stroke: 1px black;
-    margin-top: 2%;
 }
 
 #tables div {
     font-size: large;
+    margin-bottom: 5%;
 }
 
 tr, td {
@@ -91,6 +88,12 @@ tr, td {
 
 th {
     cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 
