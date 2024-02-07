@@ -211,7 +211,7 @@ def home(request):
                     driver.quit()
     
     df = df.fillna('')
-    df = df.reindex(index=df.index[::-1])
+    df.index = df.index.values[::-1]
     df.columns.name = "Week #"
     df = df.style.set_table_styles(
         [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
