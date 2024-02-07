@@ -204,6 +204,8 @@ def home(request):
                     pass_d = "Pass Defense"
                     rush_d = "Rush Defense"
                     scoring_d = "Scoring D"
+
+                    # Cleaning up Column data
                     df3['Defense Yards Avg'] = df3['Defense Yards Avg'].astype(int)
                     df3['Playoff Avg'] = df3['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
                     df3['Playoff TD'] = df3['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
@@ -213,24 +215,26 @@ def home(request):
                     df5['Rush Yards Avg'] = df5['Rush Yards Avg'].astype(int)
                     df5['Playoff Avg'] = df5['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
                     df5['Playoff TD'] = df5['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
-                    df6['Points Avg'] = df6['Points Avg'].round(1)
+                    #df6['Points Avg'] = df6['Points Avg'].round(1)
+                    # .apply(lambda x: round(x, 0))
                     #df6['Playoff Avg'] = df6['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
                     df6['Playoff TD'] = df6['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
-                    
+                    # Dropping Unnecessary rows for now
+                    df3.drop([0,2,3,4,5,6,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], inplace=True)
+                    df4.drop([0,1,2,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], inplace=True)
+                    df5.drop([0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], inplace=True)
+                    df6.drop([0,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], inplace=True)
                     driver.quit()
     
     df = df.fillna('')
     df.index = df.index.values[::-1]
     df.columns.name = "Week #"
 
-    df3.drop([0,2,3,4,5,6,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], axis=0, inplace=True)
-    df4.drop([0,1,2,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], axis=0, inplace=True)
-    df5.drop([0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], axis=0, inplace=True)
-    df6.drop([0,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], axis=0, inplace=True)
+    
     df = df.style.set_table_styles(
         [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
     ).set_table_attributes(
-        'class="table table-bordered border-dark table-hover text-center w-100 h-25""'
+        'class="table table-bordered border-dark table-hover text-center w-100 h-25"'
     )
     df2 = df2.style.hide(
         axis="index"
@@ -242,25 +246,26 @@ def home(request):
     df3 = df3.style.hide(
         axis="index"
     ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white; padding-right: -15px;"}]
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
     ).set_table_attributes(
         'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
     )
     df4 = df4.style.hide(
         axis="index"
     ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white; padding-right: -15px;"}]
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
     ).set_table_attributes(
         'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
     )
     df5 = df5.style.hide(
         axis="index"
     ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white; padding-right: -15px;"}]
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
     ).set_table_attributes(
         'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
     )
-    df6 = df6.style.hide(
+    df6 = df6.style.format({'Points Avg': '{:.1f}'}
+    ).hide(
         axis="index"
     ).set_table_styles(
         [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
