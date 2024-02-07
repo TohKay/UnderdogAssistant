@@ -196,23 +196,37 @@ def home(request):
                     df4 = pd.read_html(team_stats)[1]
                     df5 = pd.read_html(team_stats)[2]
                     df6 = pd.read_html(team_stats)[3]
-                    df4.columns = ["#", "Team", "Pass Yards Avg.", "Playoff Avg", "Pass TD", "Playoff TD"]
-                    df5.columns = ["#", "Team", "Rush Yards Avg.", "Playoff Avg", "Rush TD", "Playoff TD"]
-                    df6.columns = ["#", "Team", "Points Avg.", "Playoff Avg", "Total TD", "Playoff TD"]
+                    df3.columns = ["#", "Team", "Defense Yards Avg", "Playoff Avg", "TD Allowed", "Playoff TD"]
+                    df4.columns = ["#", "Team", "Pass Yards Avg", "Playoff Avg", "Pass TD", "Playoff TD"]
+                    df5.columns = ["#", "Team", "Rush Yards Avg", "Playoff Avg", "Rush TD", "Playoff TD"]
+                    df6.columns = ["#", "Team", "Points Avg", "Playoff Avg", "Total TD", "Playoff TD"]
                     total_d = "Total Defense"
                     pass_d = "Pass Defense"
                     rush_d = "Rush Defense"
-                    scoring_d = "Scoring Defense"
-                    df3['Defense Yards Avg.'] = df3['Defense Yards Avg.'].astype(int)
-                    df4['Pass Yards Avg.'] = df4['Pass Yards Avg.'].astype(int)
-                    df5['Rush Yards Avg.'] = df5['Rush Yards Avg.'].astype(int)
-                    df6['Points Avg.'] = df6['Points Avg.'].astype(int)
+                    scoring_d = "Scoring D"
+                    df3['Defense Yards Avg'] = df3['Defense Yards Avg'].astype(int)
+                    df3['Playoff Avg'] = df3['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
+                    df3['Playoff TD'] = df3['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
+                    df4['Pass Yards Avg'] = df4['Pass Yards Avg'].astype(int)
+                    df4['Playoff Avg'] = df4['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
+                    df4['Playoff TD'] = df4['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
+                    df5['Rush Yards Avg'] = df5['Rush Yards Avg'].astype(int)
+                    df5['Playoff Avg'] = df5['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
+                    df5['Playoff TD'] = df5['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
+                    df6['Points Avg'] = df6['Points Avg'].round(1)
+                    #df6['Playoff Avg'] = df6['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
+                    df6['Playoff TD'] = df6['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
                     
                     driver.quit()
     
     df = df.fillna('')
     df.index = df.index.values[::-1]
     df.columns.name = "Week #"
+
+    df3.drop([0,2,3,4,5,6,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], axis=0, inplace=True)
+    df4.drop([0,1,2,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], axis=0, inplace=True)
+    df5.drop([0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], axis=0, inplace=True)
+    df6.drop([0,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], axis=0, inplace=True)
     df = df.style.set_table_styles(
         [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
     ).set_table_attributes(
@@ -228,21 +242,21 @@ def home(request):
     df3 = df3.style.hide(
         axis="index"
     ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white; padding-right: -15px;"}]
     ).set_table_attributes(
         'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
     )
     df4 = df4.style.hide(
         axis="index"
     ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white; padding-right: -15px;"}]
     ).set_table_attributes(
         'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
     )
     df5 = df5.style.hide(
         axis="index"
     ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white; padding-right: -15px;"}]
     ).set_table_attributes(
         'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
     )
