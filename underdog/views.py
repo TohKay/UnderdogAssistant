@@ -19,11 +19,30 @@ def home(request):
     df2 = pd.DataFrame({
 
     })
+    df3 = pd.DataFrame({
+
+    })
+    df4 = pd.DataFrame({
+
+    })
+    df5 = pd.DataFrame({
+
+    })
+    df5 = pd.DataFrame({
+
+    })
+    df6 = pd.DataFrame({
+
+    })
     opponent_full = ""
     next_opponent = ""
     team_abbr = ""
     injury = ""
     player_name = ""
+    total_d = ""
+    pass_d = ""
+    rush_d = ""
+    scoring_d = ""
     if 'player_name' in request.GET:
         player_name = player
         options = webdriver.ChromeOptions()
@@ -171,6 +190,24 @@ def home(request):
                     injury = " Injury Report"
                     # Adjusts index to start at 1 instead of 0
                     df2.index = np.arange(1, len(df2) + 1)
+
+                    team_stats = "https://www.foxsports.com/articles/nfl/2023-nfl-defense-rankings-team-pass-and-rush-stats"
+                    df3 = pd.read_html(team_stats)[0]
+                    df4 = pd.read_html(team_stats)[1]
+                    df5 = pd.read_html(team_stats)[2]
+                    df6 = pd.read_html(team_stats)[3]
+                    df4.columns = ["#", "Team", "Pass Yards Avg.", "Playoff Avg", "Pass TD", "Playoff TD"]
+                    df5.columns = ["#", "Team", "Rush Yards Avg.", "Playoff Avg", "Rush TD", "Playoff TD"]
+                    df6.columns = ["#", "Team", "Points Avg.", "Playoff Avg", "Total TD", "Playoff TD"]
+                    total_d = "Total Defense"
+                    pass_d = "Pass Defense"
+                    rush_d = "Rush Defense"
+                    scoring_d = "Scoring Defense"
+                    df3['Defense Yards Avg.'] = df3['Defense Yards Avg.'].astype(int)
+                    df4['Pass Yards Avg.'] = df4['Pass Yards Avg.'].astype(int)
+                    df5['Rush Yards Avg.'] = df5['Rush Yards Avg.'].astype(int)
+                    df6['Points Avg.'] = df6['Points Avg.'].astype(int)
+                    
                     driver.quit()
     
     df = df.fillna('')
@@ -188,15 +225,52 @@ def home(request):
     ).set_table_attributes(
         'class="table table-sm table-bordered border-dark table-hover text-center w-50 h-25"'
     )
+    df3 = df3.style.hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
+    ).set_table_attributes(
+        'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
+    )
+    df4 = df4.style.hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
+    ).set_table_attributes(
+        'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
+    )
+    df5 = df5.style.hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
+    ).set_table_attributes(
+        'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
+    )
+    df6 = df6.style.hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
+    ).set_table_attributes(
+        'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
+    )
+    
 
     mydict = {
         "df": df.to_html(),
         "df2": df2.to_html(),
+        "df3": df3.to_html(),
+        "df4": df4.to_html(),
+        "df5": df5.to_html(),
+        "df6": df6.to_html(),
         "player": player_name,
         "opponent": opponent_full,
         "injury_color": next_opponent,
         "team_abbr": team_abbr,
-        "injury": injury
+        "injury": injury,
+        "total_d": total_d,
+        "pass_d": pass_d,
+        "rush_d": rush_d,
+        "scoring_d": scoring_d
     }
 
     return render(request, 'underdog/home.html', context=mydict)
