@@ -120,6 +120,26 @@ def home(request):
             df = df.drop(columns=['TD %', 'Int %', 'Y/A', 'AY/A', 'Y/C', 'Rate', 'Sk %', 'NY/A', 'ANY/A', 'Lng', 'Cmp %'], axis=1)
         
         # Create DataFrame for any other position
+        elif position == 'RB': 
+            # Loop for Column Titles
+            for title in column_titles[8:30]:
+                info.append(title.text.strip())
+            # Create pandas DataFrame
+            df = pd.DataFrame(columns=info[:22])
+            # Rename Columns
+            df.columns = ["Team", "", "Opp", "Result", "Rush Att", "Rush Yds", "Rush TD", "Lng", "Y/A", "Tgt", "Rec", "Rec Yds", "Y/R", "Rec TD", "Lng", "Catch%", "Y/Tgt", "Touches", "Y/Tch", "YScm", "RRTD", "Fmb"]
+            # Loop to fill Rows
+            column_info = table.find_all('tr')
+            for row in column_info[2:]:
+                row_data = row.find_all('td')
+                individual_row_data = [data.text.strip() for data in row_data]
+                length = len(df)
+                df.loc[length] = individual_row_data
+            # Drop unwanted columns
+            df = df.drop(columns=['Y/R', 'Y/Tgt', 'Y/A', 'Y/Tch', 'YScm', 'RRTD', 'Lng', 'Catch%'], axis=1)
+         
+
+        # Create DataFrame for any other position
         else: 
             # Loop for Column Titles
             for title in column_titles[8:30]:
