@@ -196,23 +196,23 @@ def home(request):
                     df4 = pd.read_html(team_stats)[1]
                     df5 = pd.read_html(team_stats)[2]
                     df6 = pd.read_html(team_stats)[3]
-                    df3.columns = ["#", "Team", "Defense Yards Avg", "Playoff Avg", "TD Allowed", "Playoff TD"]
-                    df4.columns = ["#", "Team", "Pass Yards Avg", "Playoff Avg", "Pass TD", "Playoff TD"]
-                    df5.columns = ["#", "Team", "Rush Yards Avg", "Playoff Avg", "Rush TD", "Playoff TD"]
+                    df3.columns = ["#", "Team", "Defense Yards/G", "Playoff Avg", "TD Allowed", "Playoff TD"]
+                    df4.columns = ["#", "Team", "Pass Yards/G", "Playoff Avg", "Pass TD", "Playoff TD"]
+                    df5.columns = ["#", "Team", "Rush Yards/G", "Playoff Avg", "Rush TD", "Playoff TD"]
                     df6.columns = ["#", "Team", "Points Avg", "Playoff Avg", "Total TD", "Playoff TD"]
                     total_d = "Total Defense"
                     pass_d = "Pass Defense"
                     rush_d = "Rush Defense"
-                    scoring_d = "Scoring D"
+                    scoring_d = "Scoring Defense"
 
                     # Cleaning up Column data
-                    df3['Defense Yards Avg'] = df3['Defense Yards Avg'].astype(int)
+                    df3['Defense Yards/G'] = df3['Defense Yards/G'].astype(int)
                     df3['Playoff Avg'] = df3['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
                     df3['Playoff TD'] = df3['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
-                    df4['Pass Yards Avg'] = df4['Pass Yards Avg'].astype(int)
+                    df4['Pass Yards/G'] = df4['Pass Yards/G'].astype(int)
                     df4['Playoff Avg'] = df4['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
                     df4['Playoff TD'] = df4['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
-                    df5['Rush Yards Avg'] = df5['Rush Yards Avg'].astype(int)
+                    df5['Rush Yards/G'] = df5['Rush Yards/G'].astype(int)
                     df5['Playoff Avg'] = df5['Playoff Avg'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
                     df5['Playoff TD'] = df5['Playoff TD'].str.extract('(\d+)', expand=False).fillna(0).astype(int)
                     #df6['Points Avg'] = df6['Points Avg'].round(1)
