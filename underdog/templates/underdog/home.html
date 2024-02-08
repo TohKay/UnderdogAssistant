@@ -108,10 +108,30 @@
         </div>
       </div>
     </div>
+    
+    
+    <div class="container">
+      <div class="row justify-content-center" id="tables">
+        <div class="row justify-content-center text-center" id="{{team_abbr|safe}}">
+          <table>
+            {{df|safe}}
+          </table>
+        </div>
+      </div>
+      <div class="row justify-content-center" id="tables">
+        <div class="row justify-content-center text-center" id="{{injury_color|safe}}">
+          <table>
+            {{df2|safe}}
+          </table>
+        </div>
+      </div>
+    </div>
+    <div>
+      
+    </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col justify-content-center" id="tables2">
-          <h3 class="text-center" style="text-transform: uppercase;">{{pass_d|safe}}</h3>
           <div class="row justify-content-center text-center">
             <table>
               {{df4|safe}}
@@ -119,7 +139,6 @@
           </div>
         </div>
         <div class="col justify-content-center" id="tables2">
-          <h3 class="text-center" style="text-transform: uppercase;">{{rush_d|safe}}</h3>
           <div class="row justify-content-center text-center">
             <table>
               {{df5|safe}}
@@ -127,7 +146,6 @@
           </div>
         </div>
         <div class="col justify-content-center" id="tables2">
-          <h3 class="text-center" style="text-transform: uppercase;">{{total_d|safe}}</h3>
           <div class="row justify-content-center text-center">
             <table>
               {{df3|safe}}
@@ -135,32 +153,11 @@
           </div>
         </div>
         <div class="col justify-content-center" id="tables2">
-          <h3 class="text-center" style="text-transform: uppercase;">{{scoring_d|safe}}</h3>
           <div class="row justify-content-center text-center">
             <table>
               {{df6|safe}}
             </table>
           </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="container">
-      <div class="row justify-content-center" id="tables">
-        <h1 class="text-center" style="text-transform: uppercase;">{{player|safe}}</h1>
-        <div class="row justify-content-center text-center" id="{{team_abbr|safe}}">
-          <table>
-            {{df|safe}}
-          </table>
-        </div>
-      </div>
-      
-      <div class="row justify-content-center" id="tables">
-        <h2 class="text-center" style="text-transform: uppercase;">{{opponent|safe}}{{injury|safe}}</h2>
-        <div class="row justify-content-center text-center" id="{{injury_color|safe}}">
-          <table>
-            {{df2|safe}}
-          </table>
         </div>
       </div>
     </div>

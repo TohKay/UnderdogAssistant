@@ -28,9 +28,6 @@ def home(request):
     df5 = pd.DataFrame({
 
     })
-    df5 = pd.DataFrame({
-
-    })
     df6 = pd.DataFrame({
 
     })
@@ -91,7 +88,7 @@ def home(request):
             # Create pandas DataFrame
             df = pd.DataFrame(columns=info[:20])
             # Rename Columns
-            df.columns = ["Team", "", "Opp", "Result", "0-19 A", "0-19 M", "20-29 A", "20-29 M", "30-39 A", "30-39 M", "40-49 A", "40-49 M", "50+ A", "50+ M", "Total FGA", "Total FGM", "FG%", "XPA", "XPM", "XP%"]
+            df.columns = ["Team", "@", "Opp", "Result", "0-19 A", "0-19 M", "20-29 A", "20-29 M", "30-39 A", "30-39 M", "40-49 A", "40-49 M", "50+ A", "50+ M", "Total FGA", "Total FGM", "FG%", "XPA", "XPM", "XP%"]
             # Loop to fill Rows
             column_info = table.find_all('tr')
             for row in column_info[2:]:
@@ -108,7 +105,7 @@ def home(request):
             # Create pandas DataFrame
             df = pd.DataFrame(columns=info[:28])
             # Rename Columns
-            df.columns = ["Team", "", "Opp", "Result", "Cmp", "Pass Att", "Cmp %", "Pass Yds", "Pass TD", "TD %", "Int", "Int %", "Lng", "Y/A", "AY/A", "Y/C", "Rate", "Sacks", "Sack Yds", "Sk %", "NY/A", "ANY/A", "Rush Att", "Rush Yds", "Rush TD", "Lng", "Y/A", "Fmb"]
+            df.columns = ["Team", "@", "Opp", "Result", "Cmp", "Pass Att", "Cmp %", "Pass Yds", "Pass TD", "TD %", "Int", "Int %", "Lng", "Y/A", "AY/A", "Y/C", "Rate", "Sacks", "Sack Yds", "Sk %", "NY/A", "ANY/A", "Rush Att", "Rush Yds", "Rush TD", "Lng", "Y/A", "Fmb"]
             # Loop to fill Rows
             column_info = table.find_all('tr')
             for row in column_info[2:]:
@@ -127,7 +124,7 @@ def home(request):
             # Create pandas DataFrame
             df = pd.DataFrame(columns=info[:22])
             # Rename Columns
-            df.columns = ["Team", "", "Opp", "Result", "Rush Att", "Rush Yds", "Rush TD", "Lng", "Y/A", "Tgt", "Rec", "Rec Yds", "Y/R", "Rec TD", "Lng", "Catch%", "Y/Tgt", "Touches", "Y/Tch", "YScm", "RRTD", "Fmb"]
+            df.columns = ["Team", "@", "Opp", "Result", "Rush Att", "Rush Yds", "Rush TD", "Lng", "Y/A", "Tgt", "Rec", "Rec Yds", "Y/R", "Rec TD", "Lng", "Catch%", "Y/Tgt", "Touches", "Y/Tch", "YScm", "RRTD", "Fmb"]
             # Loop to fill Rows
             column_info = table.find_all('tr')
             for row in column_info[2:]:
@@ -147,7 +144,7 @@ def home(request):
             # Create pandas DataFrame
             df = pd.DataFrame(columns=info[:22])
             # Rename Columns
-            df.columns = ["Team", "", "Opp", "Result", "Tgt", "Rec", "Rec Yds", "Y/R", "Rec TD", "Lng", "Catch%", "Y/Tgt", "Rush Att", "Rush Yds", "Rush TD", "Lng", "Y/A", "Touches", "Y/Tch", "YScm", "RRTD", "Fmb"]
+            df.columns = ["Team", "@", "Opp", "Result", "Tgt", "Rec", "Rec Yds", "Y/R", "Rec TD", "Lng", "Catch%", "Y/Tgt", "Rush Att", "Rush Yds", "Rush TD", "Lng", "Y/A", "Touches", "Y/Tch", "YScm", "RRTD", "Fmb"]
             # Loop to fill Rows
             column_info = table.find_all('tr')
             for row in column_info[2:]:
@@ -249,48 +246,65 @@ def home(request):
     df = df.fillna('')
     df.index = df.index.values[::-1]
     df.columns.name = "Week #"
-
     
-    df = df.style.set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
-    ).set_table_attributes(
-        'class="table table-bordered border-dark table-hover text-center w-100 h-25"'
-    )
-    df2 = df2.style.hide(
-        axis="index"
+    df = df.style.set_caption(player_name
     ).set_table_styles(
-        [{"selector": "th", "props": "background-color: #3D3D3D; color: white;"}]
+        [{"selector": "th", "props": "background-color: #3D3D3D; color: white;"},
+         {"selector": "caption", 
+          "props": "background-color: #3D3D3D; color: white; font-size: 40px; width: fit-content; border: 1px solid black; text-align: center; margin: auto;"}]
     ).set_table_attributes(
-        'class="table table-sm table-bordered border-dark table-hover text-center w-50 h-25"'
+        'class="table caption-top table-bordered border-dark table-hover text-center w-100 h-25"'
     )
-    df3 = df3.style.hide(
-        axis="index"
-    ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
-    ).set_table_attributes(
-        'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
-    )
-    df4 = df4.style.hide(
-        axis="index"
-    ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
-    ).set_table_attributes(
-        'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
-    )
-    df5 = df5.style.hide(
-        axis="index"
-    ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
-    ).set_table_attributes(
-        'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
-    )
-    df6 = df6.style.format({'Points Avg': '{:.1f}'}
+    df2 = df2.style.set_caption(opponent_full + injury
     ).hide(
         axis="index"
     ).set_table_styles(
-        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"}]
+        [{"selector": "th", "props": "background-color: #3D3D3D; color: white;"},
+         {"selector": "caption", 
+          "props": "background-color: #3D3D3D; color: white; font-size: 30px; width: fit-content; border: 1px solid black; text-align: center; margin: auto;"}]
     ).set_table_attributes(
-        'class="table table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
+        'class="table caption-top table-sm table-bordered border-dark table-hover text-center w-50 h-25"'
+    )
+    df3 = df3.style.set_caption(total_d
+    ).hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"},
+         {"selector": "caption", 
+          "props": "background-color: #3D3D3D; color: white; font-size: 20px; width: fit-content; border: 1px solid black; text-align: center; margin: auto;"}]
+    ).set_table_attributes(
+        'class="table caption-top table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
+    )
+    df4 = df4.style.set_caption(pass_d
+    ).hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"},
+         {"selector": "caption", 
+          "props": "background-color: #3D3D3D; color: white; font-size: 20px; width: fit-content; border: 1px solid black; text-align: center; margin: auto;"}]
+    ).set_table_attributes(
+        'class="table caption-top table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
+    )
+    df5 = df5.style.set_caption(rush_d
+    ).hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"},
+         {"selector": "caption", 
+          "props": "background-color: #3D3D3D; color: white; font-size: 20px; width: fit-content; border: 1px solid black; text-align: center; margin: auto;"}]
+    ).set_table_attributes(
+        'class="table caption-top table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
+    )
+    df6 = df6.style.set_caption(scoring_d
+    ).format({'Points Avg': '{:.1f}'}
+    ).hide(
+        axis="index"
+    ).set_table_styles(
+        [{"selector": "tr th", "props": "background-color: #3D3D3D; color: white;"},
+         {"selector": "caption", 
+          "props": "background-color: #3D3D3D; color: white; font-size: 20px; width: fit-content; border: 1px solid black; text-align: center; margin: auto;"}]
+    ).set_table_attributes(
+        'class="table caption-top table-sm table-bordered border-dark table-hover text-center w-25 h-25"'
     )
     
 
